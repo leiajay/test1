@@ -61,14 +61,17 @@ static int __init usb_phy_tune_get(char *str)
 }
 __setup("usb_phy_tune=", usb_phy_tune_get);
 
-
+void fangjietest(){
+	
+	fangjie;
+}
 static void usb_ldo_switch(int is_on)
 {
 
 	if(!IS_ERR_OR_NULL(usb_regulator)){
 		if(is_on){
 			regulator_set_voltage(usb_regulator,3300000,3300000);
-			regulator_enable(usb_regulator);
+			regulator_disable(usb_regulator);
 		}else{
 			regulator_disable(usb_regulator);
 		}
